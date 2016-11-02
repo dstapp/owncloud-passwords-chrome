@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="OwnCloudPasswords">
+  <head>
+    <link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap.min.css" />
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="services.js"></script>
+    <script src="popup.js"></script>
+  </head>
+  <body style="width: 500px; padding: 10px;">
+    <div ng-controller="PopupPasswordsController">
+      <img src="assets/ring.gif" ng-show="loading" alt="loading..." />
+      <fieldset ng-hide="loading">
+        <legend>Passwords</legend>
+        <div style="border: 1px solid #ccc; background-color: #d1d1d1; padding: 10px; margin: 10px;" ng-repeat="pass in passwords">
+          {{ pass.website }}
+          <button class="btn btn-xs btn-success pull-right" ng-click="fillPassword(pass.loginname, pass.pass)">Use</button>
+        </div>
+      </fieldset>
+    </div>
+
+    <br /><br />
+
+    <fieldset ng-controller="PopupCreateController">
+      <legend>New password</legend>
+      <button class="btn" ng-hide="showCreatePassword" ng-click="showCreatePassword = true">Create password</button>
+      <form class="form-inline" ng-show="showCreatePassword">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" ng-model="username" ng-change="updateUsername()" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="text" class="form-control" id="password" ng-model="password" ng-change="updatePassword()" />
+        </div>
+        <div class="form-group pull-right">
+          <button class="btn" ng-click="generatePassword()">Generate</button>
+          <button class="btn btn-primary" ng-click="createPassword()">Save</button>
+        </div>
+      </form>
+    </fieldset>
+  </body>
+</html>
+
