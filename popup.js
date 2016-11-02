@@ -10,6 +10,10 @@ app.factory('WebsiteService', function () {
 
     fillUsername: function (user) {
       chrome.tabs.executeScript({
+        code: 'for (let input of document.querySelectorAll("input[type=text]")) { input.value = "' + user.replace('\"', '\\"') + '"; }'
+      });
+
+      chrome.tabs.executeScript({
         code: 'for (let input of document.querySelectorAll("input[type=email]")) { input.value = "' + user.replace('\"', '\\"') + '"; }'
       });
 
