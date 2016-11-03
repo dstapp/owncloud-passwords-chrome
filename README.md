@@ -6,14 +6,14 @@
 transfered in clear-text.
 
 This is a working version of a ownCloud Passwords extension for Chrome/Chromium. It fetches passwords stored in
-ownCloud Passwords and fills the login forms. It also supports creating new passwords through the provided UI.
+ownCloud Passwords and shows them based on requested domain. It also supports creating new passwords through the provided UI.
 
 ## How it works
 
 When you click the lock icon in your toolbar, the Extension will request all your Passwords and match them against the
 URL of your currently active tab by comparing the domain. So if you're currently on Stack Overflow, your Domain is
 "stackoverflow.com" (always without "www."). This has to be the content of the "Website" (not "full URL"!) field
-of your password entry in ownCloud passwords. Then it will show up
+of your password entry in ownCloud passwords. Then it will show up.
 
 ## Compatibility
 

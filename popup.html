@@ -12,9 +12,10 @@
       <fieldset ng-hide="loading">
         <legend>Passwords</legend>
         <div style="border: 1px solid #ccc; background-color: #d1d1d1; padding: 10px; margin: 10px;" ng-repeat="pass in passwords">
-          {{ pass.website }}
-          <button class="btn btn-xs btn-success pull-right" ng-click="fillPassword(pass.loginname, pass.pass)">Use</button>
-        </div>
+          {{ pass.loginname }} @ {{ pass.website }}
+          <input type="text" ng-model="pass.pass" ng-show="showPassword[pass.id]" />
+          <button class="btn btn-xs btn-success pull-right" ng-click="toggleShowPassword(pass.id)">Show</button>
+        </div
       </fieldset>
     </div>
 
@@ -26,11 +27,11 @@
       <form class="form-inline" ng-show="showCreatePassword">
         <div class="form-group">
           <label for="username">Username</label>
-          <input type="text" class="form-control" id="username" ng-model="username" ng-change="updateUsername()" />
+          <input type="text" class="form-control" id="username" ng-model="username" />
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="text" class="form-control" id="password" ng-model="password" ng-change="updatePassword()" />
+          <input type="text" class="form-control" id="password" ng-model="password" />
         </div>
         <div class="form-group pull-right">
           <button class="btn" ng-click="generatePassword()">Generate</button>
