@@ -18,7 +18,7 @@ app.factory('PasswordService', function ($http) {
       }, function (items) {
         $http({
           method: 'GET',
-          url: items.serverUrl + '/index.php/apps/passwords/api/0.1/passwords',
+          url: items.serverUrl,
           headers: {
             'Authorization' : 'Basic ' + this._base64.encode(items.username + ':' + items.password)
           }
@@ -76,7 +76,7 @@ app.factory('PasswordService', function ($http) {
       }, function (items) {
         $http({
           method: 'POST',
-          url: items.serverUrl + '/index.php/apps/passwords/api/0.1/passwords',
+          url: items.serverUrl,
           headers: {
             'Authorization' : 'Basic ' + this._base64.encode(items.username + ':' + items.password)
           },
