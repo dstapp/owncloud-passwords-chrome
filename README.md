@@ -1,8 +1,8 @@
-# ownCloud/Nextcloud Passwords Extension for Chrome/Chromium
+# ownCloud Passwords Extension for Chrome/Chromium
 
 **DISCLAIMER:** This app is work in progress and not yet tested regarding security concerns. Use on your own risk.
 
-**IMPORTANT:** Only connect to ownCloud/Nextcloud instances that run fully on HTTP**S**. Otherwise all your passwords will be
+**IMPORTANT:** Only connect to ownCloud instances that run fully on HTTP**S**. Otherwise all your passwords will be
 transfered in clear-text.
 
 This is a working version of a ownCloud Passwords extension for Chrome/Chromium. It fetches passwords stored in
