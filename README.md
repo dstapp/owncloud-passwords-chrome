@@ -17,7 +17,7 @@ of your password entry in ownCloud passwords. Then it will show up.
 
 ## Compatibility
 
-Tested in Chromium 54, ownCloud 9 and Nextcloud 10.
+Tested in Chromium 54 and ownCloud 9. There seems to be a compatibility issue with NextCloud and the Passwords App because of a security mechanism that makes the API requests fail once a authentication token exists. PRs are welcome.
 
 ## Installation
 
